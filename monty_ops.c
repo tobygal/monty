@@ -23,7 +23,7 @@ void read_file(char *name, stack_t **stack)
 		printf("Error: Can't open file %s\n", name);
 		sterr_exit(stack);
 	}
-	while (_getline(&buf, &i, file) != -1)
+	while (getline(&buf, &i, file) != -1)
 	{
 		stack_line = line_parse(buf);
 		if (stack_line == NULL || stack_line[0] == '#')
