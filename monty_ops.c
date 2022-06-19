@@ -83,7 +83,7 @@ char *line_parse(char *line)
 {
 	char *opcode;
 
-	opcode = strtok(line, "\n");
+	opcode = strtok(line, "\n ");
 	if (opcode == NULL)
 		return (NULL);
 	return (opcode);
