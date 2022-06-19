@@ -1,6 +1,7 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+#define _GNU_SOURCE
 #define BUFSIZE 1024
 
 #include <stdio.h>
