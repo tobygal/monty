@@ -1,6 +1,8 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+#define BUFSIZE 1024
+
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
@@ -37,6 +39,9 @@ typedef struct instruction_s
 } instruction_t;
 
 typedef void(*instruct_func)(stack_t **stack, unsigned int line_number);
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+void assign_lineptr(char **lineptr, size_t *n, char *buffer, size_t count);
+ssize_t _getline(char **lineptr, size_t *n, FILE *stream);
 int delete_dnodeint_at_index(stack_t **head, unsigned int index);
 stack_t *add_dnodeint(stack_t **head, const int n);
 stack_t *add_dnodeint_end(stack_t **head, const int n);

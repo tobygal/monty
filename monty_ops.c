@@ -1,5 +1,6 @@
 #include "monty.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
  * read_file - read bytecode file
@@ -12,17 +13,17 @@ void read_file(char *name, stack_t **stack)
 	char *buf = NULL;
 	char *stack_line;
 	int count = 1;
-	size_t i = 0;
-	int check, read;
-	instruct_func op;
 	FILE *file = fopen(name, "r");
+	size_t i = 0;
+	int check;
+	instruct_func op;
 
 	if (file == NULL)
 	{
 		printf("Error: Can't open file %s\n", name);
 		sterr_exit(stack);
 	}
-	while ((read = getline(&buf, &i, file)) != -1)
+	while (_getline(&buf, &i, file) != -1)
 	{
 		stack_line = line_parse(buf);
 		if (stack_line == NULL || stack_line[0] == '#')

@@ -1,12 +1,12 @@
 #include "monty.h"
 
+int flag = 0;
 /**
  * main - the entry point for monty
  * @argc: argument count
  * @argv: argument vector
  * Return: 0
  */
-/* int flag = 0 */
 int main(int argc, char **argv)
 {
 	stack_t *stack;
