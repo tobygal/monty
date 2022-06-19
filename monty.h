@@ -9,6 +9,7 @@
 #include <string.h>
 #include <ctype.h>
 
+extern int flag;
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -61,6 +62,5 @@ void read_file(char *name, stack_t **stack);
 instruct_func get_func(char *str);
 char *line_parse(char *line);
 
-extern int flag;
 
 #endif
