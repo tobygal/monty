@@ -8,13 +8,11 @@
 
 void _push(stack_t **stack, unsigned int line_number)
 {
-	stack_t *newline;
 	char *av;
 	int push_av = 0;
 
 	push_av = 0;
-	newline = malloc(sizeof(stack_t));
-	if (newline == NULL)
+	if (*stack == NULL)
 	{
 		printf("Error: malloc failed\n");
 		sterr_exit(stack);
