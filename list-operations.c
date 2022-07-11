@@ -15,20 +15,14 @@ stack_t *add_dnodeint(stack_t **head, const int n)
 	{
 		return (NULL);
 	}
-	if (head == NULL)
-	{
-		newnode->n = n;
-		newnode->prev = NULL;
-		newnode->next = NULL;
-		*head = newnode;
-		return (*head);
-	}
-	(*head)->prev = newnode;
 	newnode->n = n;
-	newnode->next = *head;
 	newnode->prev = NULL;
-	*head = newnode;
-	return (*head);
+	newnode->next = *head;
+	if (*head != NULL)
+		(*head)->prev = newnode;
+	*head = new;
+
+	return (new);
 }
 
 /**
