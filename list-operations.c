@@ -20,9 +20,9 @@ stack_t *add_dnodeint(stack_t **head, const int n)
 	newnode->next = *head;
 	if (*head != NULL)
 		(*head)->prev = newnode;
-	*head = new;
+	*head = newnode;
 
-	return (new);
+	return (newnode);
 }
 
 /**
