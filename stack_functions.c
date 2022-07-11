@@ -14,18 +14,15 @@ void _push(stack_t **stack, unsigned int line_number)
 
 	push_av = 0;
 	newline = malloc(sizeof(stack_t));
-	printf("I got to push\n");
-	if (!newline)
+	if (*stack == NULL)
 	{
 		printf("Error: malloc failed\n");
 		sterr_exit(stack);
 	}
-	printf("About to tokenize");
 	av = strtok(NULL, "\n ");
 	if (isnumber(av) == 1 && av != NULL)
 	{
 		push_av = atoi(av);
-		printf("I converted to integer");
 	}
 	else
 	{
@@ -34,12 +31,10 @@ void _push(stack_t **stack, unsigned int line_number)
 	}
 	if (flag == 1)
 	{
-		printf("I am creating a queue");
 		add_dnodeint_end(stack, push_av);
 	}
 	if (flag == 0)
 	{
-		printf("I am creating a stack");
 		add_dnodeint(stack, push_av);
 	}
 }
