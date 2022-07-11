@@ -50,7 +50,6 @@ void _pall(stack_t **stack, unsigned int line_number)
 	(void)line_number;
 
 	temp = *stack;
-	printf("I got to pall");
 	while (temp != NULL)
 	{
 		printf("%d\n", temp->n);
